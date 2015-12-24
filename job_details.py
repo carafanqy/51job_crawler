@@ -41,9 +41,7 @@ for future in futures:
         fetched_count += 1
         print("{0} jobs fetched {1} jobs failed {2} jobs left.".format(
             fetched_count, failed_count, total_urls - fetched_count - failed_count))
-        if fetched_count % 5000 == 0:
-            json.dump(job_data, open(
-                "job_data.json", 'w', encoding="utf=8"), indent=2, sort_keys=True, ensure_ascii=False)
+
     except Exception as e:
         failed_count += 1
         print("fetching failed:{0} {1} total fail".format(e, failed_count))
